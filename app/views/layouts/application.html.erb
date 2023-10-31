@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <div id="page-title">
+      <h1>Pousadaria</h1>
+    </div>
+    <nav>
+      <%= link_to 'Seja um Pousadeiro', new_inn_owner_registration_path %>
+      <% if inn_owner_signed_in? %>
+        <%= current_inn_owner.email %>
+      <% end %>
+    </nav>
+
+    <div id="flash-msgs">
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

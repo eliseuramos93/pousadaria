@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      inn_owner:
+        one: Proprietário
+        others: Proprietários
+    attributes:
+      inn_owners:
+        email: E-mail
