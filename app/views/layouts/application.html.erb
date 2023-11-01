@@ -12,12 +12,18 @@
 
   <body>
     <div id="page-title">
-      <h1>Pousadaria</h1>
+      <%= link_to root_path do %>
+        <h1>Pousadaria</h1>
+      <% end %>
     </div>
     <nav>
-      <%= link_to 'Seja um Pousadeiro', new_inn_owner_registration_path %>
       <% if inn_owner_signed_in? %>
-        <%= current_inn_owner.email %>
+        <%= current_inn_owner.email %> | 
+        <%= link_to 'Minha Pousada', my_inn_path %> | 
+        <%= button_to 'Sair', destroy_inn_owner_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Seja um Pousadeiro', new_inn_owner_registration_path %> |
+        <%= link_to 'Entrar', new_inn_owner_session_path %>
       <% end %>
     </nav>
 
